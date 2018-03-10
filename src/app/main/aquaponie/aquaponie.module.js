@@ -18,6 +18,20 @@
                         templateUrl: 'app/main/aquaponie/aquaponie.html',
                         controller : 'AquaponieController as vm'
                     }
+                },
+                resolve  : {
+                    lastTemp: function (apiResolver, $stateParams)
+                    {
+                        return apiResolver.resolve('getLastTemp.aquaponie@get', {});
+                    },
+                    lastpH: function (apiResolver, $stateParams)
+                    {
+                        return apiResolver.resolve('getLastpH.aquaponie@get', {});
+                    },
+                    lastTank: function (apiResolver, $stateParams)
+                    {
+                        return apiResolver.resolve('getLastTank.aquaponie@get', {});
+                    }
                 }
             });
     }
