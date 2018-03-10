@@ -179,8 +179,17 @@
 
         // Base Url
         api.baseUrl = 'app/data/';
+        api.thingSpeak = "api.thingspeak.com"
 
-        // api.sample = $resource(api.baseUrl + 'sample/sample.json');
+
+       api.getLastTemp = {
+                    aquaponie   : $resource(api.thingSpeak + '/channels/445610/fields/1.json?api_key=F4IJYQKB7BRQ88MX&results=1', {}, {
+                        get: {
+                              method: 'GET'
+                        }
+                    }),
+                    piscine     : $resource('http://api.example.com/blog/:id', {id: '@id'}),
+        }
 
         return api;
     }
