@@ -21,6 +21,8 @@
             'app.quick-panel',
 
             // Sample
-            'app.select'
+            'app.select',
+
+            'app.aquaponie'
         ]);
 })();
