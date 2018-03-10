@@ -179,7 +179,7 @@
 
         // Base Url
         api.baseUrl = 'app/data/';
-        api.thingSpeak = "api.thingspeak.com"
+        api.thingSpeak = "https://api.thingspeak.com"
 
 
        api.getLastTemp = {
@@ -189,7 +189,23 @@
                         }
                     }),
                     piscine     : $resource('http://api.example.com/blog/:id', {id: '@id'}),
-        }
+        };
+       api.getLastpH = {
+                    aquaponie   : $resource(api.thingSpeak + '/channels/445610/fields/2.json?api_key=F4IJYQKB7BRQ88MX&results=1', {}, {
+                        get: {
+                              method: 'GET'
+                        }
+                    }),
+                    piscine     : $resource('http://api.example.com/blog/:id', {id: '@id'}),
+        };
+       api.getLastTank = {
+                    aquaponie   : $resource(api.thingSpeak + '/channels/445610/fields/3.json?api_key=F4IJYQKB7BRQ88MX&results=1', {}, {
+                        get: {
+                              method: 'GET'
+                        }
+                    }),
+                    piscine     : $resource('http://api.example.com/blog/:id', {id: '@id'}),
+        };
 
         return api;
     }
