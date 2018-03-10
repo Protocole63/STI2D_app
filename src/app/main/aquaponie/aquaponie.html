@@ -1,4 +1,4 @@
-<div id="nvd3" class="page-layout simple fullwidth doc-page chart-doc-page">
+<div id="nvd3" class="page-layout simple fullwidth">
 
     <!-- HEADER -->
     <div class="header md-accent-bg" layout="row" layout-align="space-between">
@@ -6,11 +6,11 @@
             <div class="breadcrumb" layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-home" class="s16"></md-icon>
                 <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
-                <span class="parent">COMPONENTS</span>
+                <span class="parent">Projets STI2D</span>
                 <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
-                <span class="parent">CHARTS</span>
+                <span class="parent">AQUAPONIE</span>
             </div>
-            <div class="title">nvD3</div>
+            <div class="title">Project Aquaponie</div>
         </div>
 
         <div layout="row" layout-align="start center">
@@ -24,11 +24,25 @@
     <!-- / HEADER -->
 
     <!-- CONTENT -->
-    <div class="content">
-        <div class="card md-whiteframe-4dp">
-            <nvd3 options="vm.bulletChart.options" data="vm.bulletChart.data"></nvd3>
+    <div class="content"  layout="column">
+        <div class="card" style="height:100px;">
+            <nvd3 options="vm.temp.options" data="vm.temp.data"></nvd3>
+        </div>
+        <div class="card" style="height:100px;">
+            <nvd3 options="vm.ph.options" data="vm.ph.data"></nvd3>
+        </div>
+        <div class="card md-whiteframe-4dp">           
+            <c3chart bindto-id="gauge-plot1-chart">
+                <chart-column column-id="Nourriture restante"
+                              column-values="{{vm.lastTank}}"
+                              column-type="gauge"/>
+                <chart-gauge min="0"
+                             max="100"
+                             width="50"/>
+            </c3chart>
         </div>
     </div>
+
     <!-- / CONTENT -->
 
 </div>
