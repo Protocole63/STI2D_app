@@ -46,10 +46,10 @@
         ];
         vm.languages = {
             en: {
-                'title'      : 'English',
+                'title'      : 'Français',
                 'translation': 'TOOLBAR.ENGLISH',
-                'code'       : 'en',
-                'flag'       : 'us'
+                'code'       : 'fr',
+                'flag'       : 'fr'
             },
             es: {
                 'title'      : 'Spanish',
