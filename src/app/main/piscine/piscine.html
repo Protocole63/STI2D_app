@@ -1,0 +1,37 @@
+<div id="nvd3" class="page-layout simple fullwidth">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">Projets STI2D</span>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">PISCINE</span>
+            </div>
+            <div class="title">Project Piscine</div>
+        </div>
+
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button" href="/select">
+                <md-icon md-font-icon="icon-arrange-bring-forward"></md-icon>
+                <span>Retour aux projets</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content"  layout="column">
+        <div class="card" style="height:100px;">
+            <nvd3 options="vm.temp.options" data="vm.temp.data"></nvd3>
+        </div>
+        <div class="card" style="height:100px;">
+            <nvd3 options="vm.ph.options" data="vm.ph.data"></nvd3>
+        </div>
+    </div>
+
+    <!-- / CONTENT -->
+
+</div>
