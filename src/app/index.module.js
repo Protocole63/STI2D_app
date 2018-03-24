@@ -20,6 +20,8 @@
             // Sample
             'app.select',
 
-            'app.aquaponie'
+            'app.aquaponie',
+
+            'app.piscine'
         ]);
 })();
