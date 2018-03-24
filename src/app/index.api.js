@@ -188,7 +188,11 @@
                               method: 'GET'
                         }
                     }),
-                    piscine     : $resource('http://api.example.com/blog/:id', {id: '@id'}),
+                    piscine   : $resource(api.thingSpeak + '/channels/456390/fields/1.json?api_key=1QLNL25U1O46LG8F&results=1', {}, {
+                        get: {
+                              method: 'GET'
+                        }
+                    })
         };
        api.getLastpH = {
                     aquaponie   : $resource(api.thingSpeak + '/channels/445610/fields/2.json?api_key=F4IJYQKB7BRQ88MX&results=1', {}, {
@@ -196,15 +200,18 @@
                               method: 'GET'
                         }
                     }),
-                    piscine     : $resource('http://api.example.com/blog/:id', {id: '@id'}),
+                    piscine   : $resource(api.thingSpeak + '/channels/456390/fields/2.json?api_key=1QLNL25U1O46LG8F&results=1', {}, {
+                        get: {
+                              method: 'GET'
+                        }
+                    })
         };
        api.getLastTank = {
                     aquaponie   : $resource(api.thingSpeak + '/channels/445610/fields/3.json?api_key=F4IJYQKB7BRQ88MX&results=1', {}, {
                         get: {
                               method: 'GET'
                         }
-                    }),
-                    piscine     : $resource('http://api.example.com/blog/:id', {id: '@id'}),
+                    })
         };
 
         return api;
