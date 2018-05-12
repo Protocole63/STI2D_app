@@ -50,6 +50,38 @@
           <md-tab label="Graphiques">
 
 
+
+                <div class="card md-whiteframe-4dp">
+                    <c3chart bindto-id="line-chart">
+                        <chart-column column-id="data 1"
+                                      column-name="Température de l'eau"
+                                      column-color="red"
+                                      column-values="{{vm.tempData}}"
+                                      column-type="line"/>
+                        <chart-column column-id="data 2"
+                                      column-name="Nourriture restante"
+                                      column-color="green"
+                                      column-values="{{vm.tankData}}"
+                                      column-type="line"/>
+                            <chart-grid show-x="false" show-y="true">
+                        </chart-grid>
+                    </c3chart>
+                </div>
+
+
+        <div class="card md-whiteframe-4dp">
+            <c3chart bindto-id="line-area-chart">
+                <chart-column column-id="data 2"
+                              column-name="pH de l'eau"
+                              column-color="blue"
+                              column-values="{{vm.phData}}"
+                              column-type="line"/>
+                <chart-grid show-x="false" show-y="true">
+                </chart-grid>
+            </c3chart>
+        </div>
+
+
           </md-tab>
       </md-tabs>
     </div>

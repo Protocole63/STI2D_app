@@ -3,7 +3,10 @@
     'use strict';
 
     angular
-        .module('app.aquaponie', [])
+        .module('app.aquaponie', [
+            'gridshore.c3js.chart'
+            ]
+        )
         .config(config);
 
     /** @ngInject */
@@ -31,7 +34,19 @@
                     lastTank: function (apiResolver, $stateParams)
                     {
                         return apiResolver.resolve('getLastTank.aquaponie@get', {});
-                    }
+                    },
+                    allTemp: function(apiResolver, $stateParams)
+                    {
+                        return apiResolver.resolve('getAllTemp.aquaponie@get', {});
+                    },
+                    allTank: function(apiResolver, $stateParams)
+                    {
+                        return apiResolver.resolve('getAllTank.aquaponie@get', {});
+                    },
+                    allpH: function (apiResolver, $stateParams)
+                    {
+                        return apiResolver.resolve('getAllpH.aquaponie@get', {});
+                    },
                 }
             });
     }
