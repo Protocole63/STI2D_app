@@ -22,24 +22,40 @@
     </div>
     <!-- / HEADER -->
 
+
     <!-- CONTENT -->
+    <div class="content">
+
+      <md-tabs md-dynamic-height>
+
+          <md-tab label="Accueil">
+                <div class="card" style="height:100px;">
+                    <nvd3 options="vm.temp.options" data="vm.temp.data"></nvd3>
+                </div>
+                <div class="card" style="height:100px;">
+                    <nvd3 options="vm.ph.options" data="vm.ph.data"></nvd3>
+                </div>
+                <div class="card md-whiteframe-4dp">           
+                    <c3chart bindto-id="gauge-plot1-chart">
+                        <chart-column column-id="Nourriture restante"
+                                      column-values="{{vm.lastTank}}"
+                                      column-type="gauge"/>
+                        <chart-gauge min="0"
+                                     max="100"
+                                     width="50"/>
+                    </c3chart>
+                </div>
+            </md-tab>
+
+          <md-tab label="Graphiques">
+
+
+          </md-tab>
+      </md-tabs>
+    </div>
+
     <div class="content"  layout="column">
-        <div class="card" style="height:100px;">
-            <nvd3 options="vm.temp.options" data="vm.temp.data"></nvd3>
-        </div>
-        <div class="card" style="height:100px;">
-            <nvd3 options="vm.ph.options" data="vm.ph.data"></nvd3>
-        </div>
-        <div class="card md-whiteframe-4dp">           
-            <c3chart bindto-id="gauge-plot1-chart">
-                <chart-column column-id="Nourriture restante"
-                              column-values="{{vm.lastTank}}"
-                              column-type="gauge"/>
-                <chart-gauge min="0"
-                             max="100"
-                             width="50"/>
-            </c3chart>
-        </div>
+
     </div>
 
     <!-- / CONTENT -->
